@@ -64,7 +64,12 @@ function HomepageContactForm() {
         setFormData({
           email: "",
           message: "",
+          phone: "",
+          name: ""
         });
+        setTimeout(() => {
+          setSubmitStatus(null);
+        },3000)
       } else {
         setSubmitStatus("error");
         console.error("Error submitting homepage form:", data);
@@ -114,7 +119,7 @@ function HomepageContactForm() {
                   placeholder="Name"
                   type="text"
                   name="name"
-                  value={formData.email}
+                  value={formData.name}
                   onChange={handleChange}
                   required
                   className="w-full text-lg bg-transparent border-b-2 border-white placeholder:text-white placeholder:font-thin text-white focus:outline-none my-6"
@@ -140,7 +145,7 @@ function HomepageContactForm() {
                   placeholder="Phone"
                   type="text"
                   name="phone"
-                  value={formData.email}
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-full text-lg bg-transparent border-b-2 border-white placeholder:text-white placeholder:font-thin text-white focus:outline-none my-6"
                 />
